@@ -1,0 +1,31 @@
+.blog {
+    a {
+        font-family: $font-family-base;
+    }
+    @each $name,
+    $value in $colors {
+        &.blog-#{$name} {
+            .title,
+            .link {
+                &:hover {
+                    color: $value !important;
+                }
+            }
+        }
+    }
+}
+
+.blog {
+    .blog-image {
+        img {
+            transition: all 0.5s ease;
+        }
+    }
+    &:hover {
+        .blog-image {
+            img {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
